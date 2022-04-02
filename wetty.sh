@@ -1,2 +1,2 @@
-#/bin/bash
-wetty --config config.json
+#!/bin/bash
+wetty --conf /opt/config.json
