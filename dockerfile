@@ -6,7 +6,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x -o setup_16x.sh && /bin/bas
 RUN node -v
 RUN npm install --global yarn
 RUN yarn global add wetty
-RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && /bin/bash get _helm.sh && rm get_helm.sh
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && /bin/bash get_helm.sh && rm get_helm.sh
 COPY config.json /opt/
 COPY wetty.sh /opt/
 ENV user=kube
