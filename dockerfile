@@ -12,8 +12,8 @@ ENV user=kube
 ENV password=kubepassword
 VOLUME /config
 
-RUN mkdir /home/${user} && mkdir /home/${user}/.kube && mkdir /config && mkdir /config/.kube
+
 COPY config /config/.kube/
-RUN ln -s /config/.kube/config /home/${user}/.kube/config
+
 EXPOSE 3000
 ENTRYPOINT [ "/opt/wetty.sh" ] 
