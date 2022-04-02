@@ -14,7 +14,7 @@ ENV password=kubepassword
 VOLUME /config
 
 
-COPY config /config/.kube/
+COPY config /opt/config-template
 
 EXPOSE 3000
 ENTRYPOINT [ "/opt/wetty.sh" ] 
