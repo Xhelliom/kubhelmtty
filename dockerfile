@@ -11,9 +11,9 @@ ENV user=kube
 ENV password=kubepassword
 VOLUME /config
 RUN useradd -s /bin/bash -d /home/${user} -p $(openssl passwd -1 ${password} ) ${user}
-RUN mkdir /home/${user} && mkdir /home/${user}/.kube
-COPY config /home/${user}/.kube/
-RUN chown -R ${user}:${user}
+RUN mkdir /home/${user} && mkdir /config && mkdir /config/.kube && rm /setup_16x.sh 
+COPY config /config/.kube/
+RUN chown -R ${user}:${user} /home/${user} && chown -R ${user}:${user} /config
 EXPOSE 3000
 COPY wetty.sh /opt/
 ENTRYPOINT [ "/opt/wetty.sh" ] 
