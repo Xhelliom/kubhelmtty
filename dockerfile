@@ -14,6 +14,6 @@ VOLUME /config
 
 RUN mkdir /home/${user} && mkdir /home/${user}/.kube && mkdir /config && mkdir /config/.kube
 COPY config /config/.kube/
-RUN chown -R ${user}:${user} /home/${user} && chown -R ${user}:${user} /config && ln -s /config/.kube/config /home/${user}/.kube/config
+RUN ln -s /config/.kube/config /home/${user}/.kube/config
 EXPOSE 3000
 ENTRYPOINT [ "/opt/wetty.sh" ] 
